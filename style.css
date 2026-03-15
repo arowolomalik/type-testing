@@ -1,0 +1,549 @@
+@font-face {
+    font-family: 'sora';
+    src: url(./assets/fonts/Sora/Sora-VariableFont_wght.ttf);
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.one{
+    display: block;
+}
+
+#mobileinput{
+    position: absolute;
+    opacity: 0;
+    /* display: none; */
+}
+
+
+
+
+
+body{
+    background-color: hsl(0, 0%, 7%);
+    color: white;
+    margin: 20px 60px;
+    font-family: 'sora' , sans-serif;
+
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+
+    /* justify-content: center; */
+}
+
+.logo img{
+    width: 200px;
+}
+
+.best{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.best img{
+    width: 20px;
+}
+.paragraphformat{
+     color: hsl(240, 3%, 46%);
+    font-weight: 300;
+    font-size: 0.7rem;
+
+}
+
+.white{
+    color: white;
+}
+#record{
+    color: white;
+    font-size: 0.8rem;
+}
+
+.game button{
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 2px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    margin: 0 2px;
+}
+
+.game button:hover{
+    border-color: hsl(210, 100%, 65%);
+    color: hsl(210, 100%, 65%);
+}
+.game button:focus{
+      border-color: hsl(210, 100%, 65%);
+    color: hsl(210, 100%, 65%);
+}
+
+
+/* .game */
+
+.game{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.rating{
+    display: flex;
+    align-items: center;
+}
+
+.selection{
+    display: flex;
+    align-items: center;
+    /* gap: 30px; */
+}
+.difficulty{
+    display: flex;
+    align-items: center; 
+    border-right: 1px solid;
+    padding-right: 30px;
+}
+
+
+
+
+.mode{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.rating p{
+    /* border-right: 1px solid;
+    padding: 0px  30px; */
+    
+}
+
+.wpm{
+    border-right: 1px solid;
+    padding: 0px  30px 0px 0px;
+
+}
+
+.time{
+    padding: 0px  0px 0px 30px;
+
+}
+
+.game{
+    padding-bottom: 5px;
+    border-bottom: 1px solid ;
+    border-color: hsl(240, 3%, 46%);
+
+}
+
+.accuracy{
+    border-right: 1px solid;
+    padding: 0px  30px;
+
+}
+
+.timeleft{
+    color: white;
+    font-weight: 900;
+    font-size: 1.5em;  
+}
+
+.accuracyf{
+    color: white ;
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+.wpmf{
+     color: white ;
+    font-weight: 900;
+    font-size: 1.5em;
+
+}
+
+
+
+.text{
+    margin: 20px 0px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid;
+    border-color: hsl(240, 3%, 46%);
+    filter: blur(5px);
+    
+}
+
+.text p{
+    font-size: 2rem;
+    color: hsl(240, 3%, 46%);
+    font-weight: 500;
+
+}
+
+.test{
+    position: relative;
+}
+
+.work{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.testbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.test button{
+    /* background-color: hsl(0, 0%, 15%); */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+
+}
+
+.optionSelection{
+    display: none;
+}
+
+.work{
+    position: relative;
+}
+
+
+.start{
+    /* display: none; */
+    cursor: pointer;
+    position: absolute;
+    top: 70px;
+    background-color: hsl(214, 100%, 55%);
+    color: white;
+}
+
+.start:hover{
+    background-color: hsl(210, 100%, 65%);
+}
+
+.restart{
+    background-color: hsl(0, 0%, 15%);
+    text-align: center;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+
+}
+
+.restart img{
+    width: 11px;   
+}
+
+.correct{
+    color: green;
+
+}
+
+.wrong{
+    color: red;
+    text-decoration: underline;
+}
+
+#wrong{
+    color: red;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+#correct{
+    color: green;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+#accscore{
+    color: red;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+#wpmscore{
+    color: white;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.highlight{
+    background-color: hsl(240, 1%, 59%);
+    border-radius: 5px;
+}
+
+.two{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.two button{
+    background-color: hsl(0, 0%, 100%);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 10px;
+}
+
+
+.values{
+    display: flex;
+    gap: 10px;
+}
+
+.figures{
+    border: 0.1px solid hsl(240, 1%, 59%);
+    padding: 10px 40px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    color: hsl(240, 1%, 59%);
+    margin-bottom: 20px;
+   
+}
+
+.twoimg{
+    margin-bottom: 30px;
+}
+
+.twop{
+    color: hsl(240, 1%, 59%);
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+}
+
+.starone{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+
+}
+.startwo{
+    position: absolute;
+    left: 0px;
+    top: 30px;
+}
+
+.distance{
+    margin-bottom: 10px;
+}
+
+.confetti{
+    position: absolute;
+    bottom: -320px;
+}
+
+.highscore{
+    display: none;
+}
+.testComplete{
+    display: none;
+}
+.baseline{
+    display: none;
+}
+.normal{
+    display: none;
+}
+
+html{
+    position: relative;
+}
+
+.selectiontime{
+    display: none;
+}
+.logosmall{
+    display: none;
+}
+
+
+
+
+
+@media(min-width: 1350px) {
+    
+    body{
+        margin: 20px 120px;
+    }
+    
+}
+
+@media(max-width: 375px){
+    .game{
+        display: block;
+    }
+    .rating{
+        margin-bottom: 10px;
+    }
+
+    .personal{
+        display: none;
+    }
+    .buttonSelection{
+        display: none;
+    }
+    .optionSelection{
+        display: block;
+    }
+    .selection p{
+        display: none;
+    }
+    .selectiontime{
+        display: block;
+    }
+    .buttontime{
+        display: none;
+    }
+    .logosmall{
+        display: block;
+        width: 20px;
+    }
+    .logo img{
+        width: 30px;
+    }
+    .logobig{
+        display: none;
+    }
+    body{
+    background-color: hsl(0, 0%, 7%);
+    /* color: white; */
+    margin: 10px 20px;
+    font-family: 'sora' , sans-serif;
+    }
+     .wpm{
+        text-align: center;
+    }
+
+    .accuracy{
+        text-align: center;
+    }
+
+    .time{
+        text-align: ;
+    }
+    .selection{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+    }
+    .difficulty{
+        border-right: none;
+        padding: 0;
+    }
+    #timeSelection{
+        padding: 0;
+    }
+
+    #difficulty{
+        padding: 2px 30px; 
+        text-align: center;
+    }
+
+    option{
+        text-align: center;
+    }
+    .mode{
+        padding: 0;
+    }
+
+    #timeSelection{
+        padding: 2px 30px;
+        text-align: center;
+    }
+
+    .game select{
+        border: solid 1px grey;
+        border-radius: 5px;
+        color: white;
+        
+        background-color: black;
+        text-align: center;
+    }
+    .one{
+    display: block;
+
+    }
+    .two{
+        display: none;
+
+    }
+    .highscore{
+    display: none;
+    text-align: center;
+    }
+    .testComplete{
+    display: none;
+    text-align: center;
+    }
+    .baseline{
+    display: none;
+    }
+    .normal{
+    display: none;
+    }
+    .values{
+        flex-direction: column;
+        gap: 0;
+    }
+    .baseline{
+        text-align: center;
+    }
+    .twoimg{
+    }
+    .figures{
+        padding-right: 180px;
+    }
+    .starone{
+        width: 30px;
+    }
+    .startwo{
+        width: 20px;
+    }
+    .confetti{
+        width: 500px ;
+        bottom: -60px;
+    }
+
+
+}
+
+
+
+
+
+
+

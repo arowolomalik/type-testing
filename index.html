@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
+  <title>Frontend Mentor | Typing Speed Test</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  
+    <nav>
+    <div class="logo">
+      <img class="logobig" src="./assets/images/logo-large.svg" alt="">
+      <img class="logosmall" src="./assets/images/logo-small.svg" alt="">
+    </div>
+    <div class="best">
+      <img src="./assets/images/icon-personal-best.svg" alt="">
+      <p class="paragraphformat"><span class="personal">personal</span> best: <span id="record"></span> <span class="white">WPM</span></p>
+    </div>
+  </nav>
+  <input type="text" id="mobileinput">
+  <div class="one">
+  <section class="game">
+    <div class="rating">
+      <p class="paragraphformat wpm">WPM: <span class="wpmf" id="wpmf">0</span></p>
+      <p class="paragraphformat accuracy"> Accuracy: <span class="accuracyf" id="accurate">100%</span></p>
+      <p class="paragraphformat time">  Time: <span class="timeleft" id="timeleft">60</span></p>
+    </div>
+    <div class="selection">
+      <div class="difficulty">  
+      <p class="paragraphformat">Difficulty:</p>
+      <div class="buttonSelection">
+        <button id="easy">easy</button>
+      <button id="medium">medium</button>
+      <button id="hard">Hard</button>
+      </div>
+      <div class="optionSelection">
+        <select name="" id="difficulty">
+          <option value="easy">easy</option>
+          <option value="medium">medium</option>
+          <option value="hard">hard</option>
+        </select>
+      </div>
+      
+    </div>
+    <div class="mode">
+      <div class="buttontime">
+        <p class="paragraphformat">Mode:</p>
+      <button id="sixty"> Timed (60s)</button>
+      <!-- <button id="passage">Passage</button> -->
+      </div>
+      <div class="selectiontime">
+        <select name="" id="timeSelection">
+          <option value="time">Timed (60s)</option>
+          <!-- <option value="passage">Passage</option> -->
+        </select>
+      </div>
+      
+    </div>
+    </div>
+  </section>
+  <section class="test">
+    <div class="text">
+      <p></p>
+    </div>
+   
+    <div class="testbtn">
+      <button id="start" class="start" >Start Typing Test</button>
+    <button class="restart" id="restart"><p>Restart Test</p><img src="./assets/images/icon-restart.svg" alt=""></button>
+  </section>
+    </div>
+  </div>
+  <div class="two">
+    <img class="twoimg highscore" src="./assets/images/icon-new-pb.svg" alt="">
+    <img class="starone normal" src="./assets/images/pattern-star-1.svg" alt="">
+    <img class="startwo normal" src="./assets/images/pattern-star-2.svg" alt="">
+    <img class="confetti highscore" src="./assets/images/pattern-confetti.svg" alt="">
+    <img class="twoimg normal" src="./assets/images/icon-completed.svg" alt="">
+    <h2 class="baseline" id="baseline">Baseline Established!</h2>
+    <h2 class="highscore" id="highscore">Highscore score smashed!</h2>
+    <h2 class="testComplete" id="testComplete">Test complete!</h2>
+    <p class="twop baseline ">You've set the bar. Now the real challenge begins-time to beat it.</p>
+    <p class="twop highscore ">You're getting faster. That was incredible typing</p>
+    <p class="twop testComplete ">You've set the bar. Now the real challenge begins-time to beat it.</p>
+    <div class="values">
+      <div class="figures">
+        <p class="distance">WPM:</p>
+        <div id="wpmfig"><p><span id="wpmscore"></span></p></div>
+      </div>
+      <div class="figures">
+        <p class="distance">Accuracy:</p>
+        <div id="accuracyfig"><p><span id="accscore"></span></p></div>
+      </div>
+      <div class="figures">
+        <p class="distance">Characters: </p>
+        <div id="character"><p><span id="correct"></span>/<span id="wrong"></span></p></div>
+      </div>
+    </div>
+    <button id="beatscore"> beat this score <i class="fa-solid fa-arrow-rotate-left"></i></button>
+
+
+  </div>
+</body>
+<script src="./script.js"></script>
+</html>
