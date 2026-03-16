@@ -113,7 +113,7 @@ fetch("./data.json")
     if(ignoreKeys.includes(typedKey)) return;
 
     if(!currentLetter)return
-    if(typedKey === currentLetter.textContent){
+    if(typedKey.toLowerCase() === currentLetter.textContent.toLowerCase()){
         currentLetter.classList.add("correct")
         correctCount++
               
