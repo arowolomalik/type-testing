@@ -103,11 +103,7 @@ fetch("./data.json")
     console.log(letters.length)
     
     
-        if(!gameactive)return;
-       if(currentIndex === letters.length){
-        endGame(correctCount, incorrectCount);
-
-    }
+    
    
 
     const ignoreKeys = ["Shift","CapsLock","Alt","Control","Meta","Tab","Enter","ArrowLeft","ArrowRight"];
@@ -124,6 +120,18 @@ fetch("./data.json")
     }
 
     currentIndex++
+
+    letters[currentIndex].scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+        if(!gameactive)return;
+       if(currentIndex === letters.length){
+        endGame(correctCount, incorrectCount);
+
+    }
+
     if(addhighlight){
         addhighlight.classList.add("highlight")
     highlightnext++
