@@ -212,6 +212,7 @@ function time(){
 
     function endGame(correct,wrong){
         gameactive = false;
+        
         document.querySelector('.one').style.display = 'none'
         document.querySelector('.two').style.display = 'flex'
         document.getElementById('correct').textContent = correct;
@@ -314,6 +315,10 @@ function time(){
     }
 
     document.getElementById('beatscore').addEventListener('click', again)
+    document.getElementById('clearRecord').addEventListener('click', function clearLocalstorage(){
+        localStorage.clear();
+        document.getElementById('record').textContent = "";
+    })
 
     document.getElementById('restart').addEventListener('click', again)
 
