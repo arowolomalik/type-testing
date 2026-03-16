@@ -89,14 +89,15 @@ fetch("./data.json")
         let timeleft = 60
         let accuracy = 0
         let wpm = 0
+        let mobileinput
        
 
 
    function characterOnScreen(){
-    document.addEventListener('keydown', (e) => {
+    document.getElementById('mobileinput').addEventListener("input", (e)=>{
     
 
-    const typedKey = e.key
+    const typedKey = e.target.value.slice(-1);
     const letters = document.querySelectorAll(".text span")
     const addhighlight = letters[highlightnext] 
     const removehightlight = letters[hightlightremove]
@@ -152,12 +153,37 @@ fetch("./data.json")
 
     document.getElementById("accurate").textContent = `${Math.floor(accuracy)} %`;
     document.getElementById("accurate").style.color = 'hsl(354, 63%, 57%)';
+    document.getElementById('mobileinput').value = "";
 })}
  characterOnScreen()
 
+      
+       
+   let timeleftscreen = Number(document.getElementById('timeleft').textContent)
+      document.getElementById('timeSelection').addEventListener('change', function timetochoose(){
+        if(gameactive) return;
+        if(this.value === "sixty"){
+            timeleft = 60;
+            document.getElementById('timeleft').textContent = '60'
+        }else if(this.value === "ninety"){
+            timeleft = 90;
+            document.getElementById('timeleft').textContent = '90'
 
+        }else if(this.value === "fifteen"){
+            timeleft = 150;
+            document.getElementById('timeleft').textContent = '150'
+
+        }
+
+        timeleftscreen = Number(document.getElementById('timeleft').textContent)
+        console.log(timeleftscreen)
+        
+    })
+     
+        
       let timeinterval
 function time(){
+
      timeinterval = setInterval(() => {
         if(timeleft!=0){
             timeleft--
@@ -171,16 +197,14 @@ function time(){
         document.getElementById('timeleft').style.color = 'hsl(49, 85%, 70%)'
 
 
-        let timepassed = 60 - timeleft;
-        let minutes = timepassed / 60;
+
+        let timepassed = timeleftscreen - timeleft;
+        let minutes = timepassed / timeleftscreen;
         let wordPerMinute = correctCount/5;
 
         wpm = wordPerMinute/minutes
 
         document.getElementById('wpmf').textContent = Math.floor(wpm);
-
-        
-
         }, 1000);
 }
       
@@ -297,12 +321,16 @@ function time(){
         timeleft = 60;
         accuracy = 0;
         wpm = 0;
+        
         highlightnext = 1;
         hightlightremove = 0;
         document.getElementById('timeleft').textContent = "60"
+        timeleftscreen=Number(document.getElementById('timeleft').textContent);
         document.getElementById('accurate').textContent = "100%"
         document.getElementById('wpmf').textContent = 0;
          clearInterval(timeinterval)
+
+         
 
         document.querySelectorAll(".text span").forEach(letter =>{
             letter.classList.remove("correct","wrong","highlight")

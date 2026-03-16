@@ -403,7 +403,7 @@ html{
     
 }
 
-@media(max-width: 400px){
+@media(max-width: 600px){
     .game{
         display: block;
     }
@@ -544,6 +544,11 @@ html{
         max-height: 200px;
         overflow-y: auto;
         padding-bottom: 200px;
+    }
+    .rating{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
 
