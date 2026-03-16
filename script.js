@@ -8,7 +8,7 @@ fetch("./data.json")
 
     document.getElementById('record').textContent = localStorage.getItem('highscore')
 
-    let gameactive = true;
+    let gameactive = false;
     
     const btns = document.querySelectorAll('.difficulty button')
      
@@ -161,7 +161,7 @@ fetch("./data.json")
        
    let timeleftscreen = Number(document.getElementById('timeleft').textContent)
       document.getElementById('timeSelection').addEventListener('change', function timetochoose(){
-        if(gameactive) return;
+        // if(gameactive) return;
         if(this.value === "sixty"){
             timeleft = 60;
             document.getElementById('timeleft').textContent = '60'
