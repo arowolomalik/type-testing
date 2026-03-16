@@ -124,17 +124,16 @@ fetch("./data.json")
     currentIndex++
 
    
-    const nextLetter = letters[currentIndex + 1];
-    if(nextLetter.offsetTop > currentLineTop){
-        nextLetter.scrollIntoView({behavior: 'smooth', block: 'start'});
-        currentLineTop = nextLetter.offsetTop
+    const nextLetter = letters[currentIndex];
+    if (nextLetter) {
+      const textContainer = document.querySelector(".text");
+      textContainer.scrollTop = nextLetter.offsetTop - 80;
     }
 
     
         if(!gameactive)return;
        if(currentIndex === letters.length){
         endGame(correctCount, incorrectCount);
-        return;
 
     }
 

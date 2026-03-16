@@ -538,8 +538,9 @@ html{
         bottom: -90px;
     }
     .text{
-        max-height: 500px;
+        max-height: 200px;
         overflow-y: auto;
+        padding-bottom: 200px;
     }
 
 
