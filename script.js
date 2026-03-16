@@ -89,7 +89,7 @@ fetch("./data.json")
         let timeleft = 60
         let accuracy = 0
         let wpm = 0
-         let currentLineTop = letters[0].offsetTop;
+       
 
 
    function characterOnScreen(){
@@ -102,6 +102,7 @@ fetch("./data.json")
     const removehightlight = letters[hightlightremove]
     const currentLetter = letters[currentIndex];
     console.log(letters.length)
+     let currentLineTop = letters[currentIndex];
     
     
     
@@ -123,7 +124,7 @@ fetch("./data.json")
     currentIndex++
 
    
-    const nextLetter = letters[currentIndex];
+    const nextLetter = letters[currentIndex + 1];
     if(nextLetter.offsetTop > currentLineTop){
         nextLetter.scrollIntoView({behavior: 'smooth', block: 'start'});
         currentLineTop = nextLetter.offsetTop
