@@ -89,6 +89,7 @@ fetch("./data.json")
         let timeleft = 60
         let accuracy = 0
         let wpm = 0
+         let currentLineTop = letters[0].offsetTop;
 
 
    function characterOnScreen(){
@@ -121,14 +122,18 @@ fetch("./data.json")
 
     currentIndex++
 
-    letters[currentIndex].scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
+   
+    const nextLetter = letters[currentIndex];
+    if(nextLetter.offsetTop > currentLineTop){
+        nextLetter.scrollIntoView({behavior: 'smooth', block: 'start'});
+        currentLineTop = nextLetter.offsetTop
+    }
 
+    
         if(!gameactive)return;
        if(currentIndex === letters.length){
         endGame(correctCount, incorrectCount);
+        return;
 
     }
 
