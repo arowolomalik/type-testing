@@ -249,7 +249,7 @@ function time(){
        
         
 
-        if(highscore === null){
+        if(!localStorage.getItem('highscore')){
             document.querySelectorAll('.baseline').forEach(base => {
                 base.style.display = 'block'
             })
